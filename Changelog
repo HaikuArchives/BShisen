@@ -1,3 +1,11 @@
+Apr 22, 2014
+ Pistooli
+o Completely recreated resource file. 
+o Put bitmaps (converted to PNG) in resource file.
+o Put sounds in resource file. 
+o Put "S.tiff" (for the about window) in resource file.
+o Deleted the old BeOS makefile and created a new one for Haiku (gcc2).
+
 Mar 4th 1999
  KWS
 o changed class board implementation to be reentrant in all cases.
@@ -5,7 +13,7 @@ o changed class board implementation to be reentrant in all cases.
 
 o ID_win.cpp - got rid of gcc/alpha warning
 
-Mar 3rd
+Mar 3rd, 1999
 o Changed to store/retrieve scores from B_COMMON_SETTINGS/BShisen.scores
 o Resized pause window
 
