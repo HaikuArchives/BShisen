@@ -1,41 +1,27 @@
-CC	= cc
-CXX	= cc
-CXXFLAGS	= -W -O1
-LDLIBS	= -ltranslation -lbe -lmedia
+NAME= BShisen
+TYPE= APP
+SRCS= BitmapControl.cpp Prefs.cpp Tiles.cpp ID_Win.cpp main.cpp board.cpp GameWindow.cpp Language.cpp Hall.cpp Shisen.cpp
+RSRCS= Resources.rsrc
+LIBS= /boot/system/lib/libbe.so /boot/system/lib/libroot.so /boot/system/lib/libmedia.so /boot/system/lib/libtranslation.so /boot/system/lib/libgame.so
+LIBPATHS=
+SYSTEM_INCLUDE_PATHS= /boot/develop/headers/be /boot/develop/headers/cpp /boot/develop/headers/posix /boot/develop/lib /boot/beos/system/lib
+LOCAL_INCLUDE_PATHS=
+OPTIMIZE=SOME
+#	specify any preprocessor symbols to be defined.  The symbols will not
+#	have their values set automatically; you must supply the value (if any)
+#	to use.  For example, setting DEFINES to "DEBUG=1" will cause the
+#	compiler option "-DDEBUG=1" to be used.  Setting DEFINES to "DEBUG"
+#	would pass "-DDEBUG" on the compiler's command line.
+DEFINES=
+#	specify special warning levels
+#	if unspecified default warnings will be used
+#	NONE = supress all warnings
+#	ALL = enable all warnings
+WARNINGS =
+# Build with debugging symbols if set to TRUE
+SYMBOLS=
+COMPILER_FLAGS=-Woverloaded-virtual -funsigned-bitfields -Wwrite-strings 
+LINKER_FLAGS=
 
-TARGET	= BShisen
-
-# for compiling
-OBJS	= main.o board.o Shisen.o GameWindow.o ID_Win.o \
-	BitmapControl.o Tiles.o Hall.o \
-	Prefs.o
-
-.SUFFIXES: .cpp
-
-.cpp.o:
-	$(CXX) -c $(CXXFLAGS) $<
-
-
-$(TARGET): $(OBJS) 
-	$(CC) $(LDFLAGS) $(OBJS) $(LDLIBS) -o $@
-	strip $@
-	xres -o $@ $(TARGET)_x86.rsrc 
-	mimeset $(TARGET)
-
-
-clean:
-	$(RM) *.o 
-
-clobber: clean
-	$(RM) -f $(TARGET)
-               
-main.o:		main.cpp board.h
-Shisen.o:	Shisen.cpp Shisen.h 
-board.o:	board.cpp board.h
-GameWindow.o:	GameWindow.cpp GameWindow.h board.h array2d.cpp \
-		BitmapControl.h Prefs.h
-ID_Win.o:	ID_Win.cpp ID_Win.h
-BitmapControl.o:	BitmapControl.cpp BitmapControl.h
-Tiles.o:	Tiles.cpp Tiles.h
-Hall.o:		Hall.cpp Hall.h
-Prefs.o:	Prefs.cpp Prefs.h
+## include the makefile-engine
+include $(BUILDHOME)/etc/makefile-engine
