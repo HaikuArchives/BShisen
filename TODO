@@ -1,3 +1,5 @@
+- Add support for custom tile sets.
+- Add Menu Item to upload scores to an online repository.
 - Allow user to select sound files to play instead of default ones
 - Make graphic tiling on by default
 
