@@ -2,7 +2,7 @@
  * Copyright 1998, 1999 Kelvin W Sherlock
  *
  */
-
+// Last edited by Pistooli, 22/04/2014
 #include <Menu.h>
 #include <MenuItem.h>
 #include <MenuBar.h>
@@ -99,26 +99,24 @@ BMenuItem *NewMItem;
 	REGISTERED = true;
 #endif
 
-	if (NAG && (!REGISTERED))
-	{
-		BAlert *b = new BAlert( "", "You've now used BShisen for more than 7 days "
-								"and have probably had quite a bit of fun.  Please "
-								"support the BeOS and those that bring you high "
-								"quality, fun software by registering.",
-								"Ok");
-		b->Go();
-	
-	}
+	//if (NAG && (!REGISTERED))
+	//{
+	//	BAlert *b = new BAlert( "", "You've now used BShisen for more than 7 days "
+	//							"and have probably had quite a bit of fun.  Please "
+	//							"support the BeOS and those that bring you high "
+	//							"quality, fun software by registering.",
+	//							"Ok");
+	//	b->Go();
+	//
+	//}
 
 
 	if (prefs->IsFresh())
 	{
 		BAlert *b = new BAlert("", "Welcome to BShisen!  I hope you have fun "
-									"with this fun and addictive game.  Please "
-									"remember that BShisen is SHAREWARE.  To "
-									"legally use it after a 7 day trial period, "
-									"you must pay $15.  See the README for more "
-									"details.  Have fun!",
+									"with this fun and addictive game. Please "
+									"see the README for more details. "
+									"Have fun!",
 									"Ok");
 									
 		b->Go();
@@ -304,8 +302,10 @@ BMenuItem *NewMItem;
 	// frame_rate, channel count, format, byte order, buffer size 
 	media_raw_audio_format fmt = {44100/2, 1, 2, 2, 8192};
 	bool SoundError = false;
-	
-	soundptr = (be_app->AppResources())->LoadResource(B_RAW_TYPE, SOUND_OK_ID, &outs);
+
+//	Pistooli: I am too lazy now to look up SOUND_OK_ID (sound put into Resource File)	
+//	soundptr = (be_app->AppResources())->LoadResource(B_RAW_TYPE, SOUND_OK_ID, &outs);
+	soundptr = (be_app->AppResources())->LoadResource(B_RAW_TYPE, 1, &outs);
 	
 	if (soundptr)
 	{
@@ -316,8 +316,10 @@ BMenuItem *NewMItem;
 			SoundError = true;
 		}
 	}
-	
-	soundptr = (be_app->AppResources())->LoadResource(B_RAW_TYPE, SOUND_BAD_ID, &outs);
+
+//	Pistooli: I am too lazy now to look up SOUND_BAD_ID (sound put into Resource File)	
+//	soundptr = (be_app->AppResources())->LoadResource(B_RAW_TYPE, SOUND_BAD_ID, &outs);
+	soundptr = (be_app->AppResources())->LoadResource(B_RAW_TYPE, 2, &outs);
 	
 	if (soundptr)
 	{
@@ -601,24 +603,24 @@ void GameWindow::ChangeGameSize(unsigned new_size)
 
 	Hide();
 
-	if (!REGISTERED)
-	{
-		if (new_size == SIZE_14x6_MITEM || new_size == SIZE_18x8_MITEM)
-		{
-		}
-		else
-		{
-			BAlert *b;
-		
-			b = new BAlert("", "This board size is not available to "
-								"unregistered users.  If you enjoy "
-								"BShisen, please consider registering.",
-								"Ok");
-			b->Go();
-			Show();
-			return;
-		}
-	}	
+	//if (!REGISTERED)
+	//{
+	//	if (new_size == SIZE_14x6_MITEM || new_size == SIZE_18x8_MITEM)
+	//	{
+	//	}
+	//	else
+	//	{
+	//		BAlert *b;
+	//	
+	//		b = new BAlert("", "This board size is not available to "
+	//							"unregistered users.  If you enjoy "
+	//							"BShisen, please consider registering.",
+	//							"Ok");
+	//		b->Go();
+	//		Show();
+	//		return;
+	//	}
+	//}	
 
 
 
@@ -1474,7 +1476,8 @@ void GameWindow::TileCount(unsigned int new_count)
 {
 static	char buffer[64];
 
-	sprintf(buffer, "Tiles Remaining: %d", new_count);
+// Pistooli: Cosmetic change ('Tiles Remaining' changed to 'Tiles Left') for better visual
+	sprintf(buffer, "Tiles Left: %d", new_count);
 
 	Lock();
 	if (Remain_String)
@@ -1744,4 +1747,3 @@ void GameWindow::GameDone(void)
 	}
 	//this->PostMessage(FORCE_NEW);
 }
-
