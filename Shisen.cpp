@@ -1,8 +1,12 @@
+//
+// Last edited by Pistooli, 22/04/2014
+//
 #include "Shisen.h"
 #include "GameWindow.h"
 #include <View.h>
 #include <StringView.h>
 #include <TranslationUtils.h>
+#include <TranslatorFormats.h> // Pistooli: inserted for TIFF formats
 #include <OS.h>
 #include <Entry.h>
 #include "res.h"
@@ -52,19 +56,19 @@ app_info app;
 	REGISTERED = false;
 	NAG = false;
 	
-	get_system_info(&info);
+	get_system_info(&info);get_system_info(&info);
 	
-	if (info.id[0] && info.id[1]) // P3 ?
-	{
-		sp.i32[0] = info.id[0];
-		sp.i32[1] = info.id[1];
+//	if (info.id[0] && info.id[1]) // P3 ?
+//	{
+//		sp.i32[0] = info.id[0];
+//		sp.i32[1] = info.id[1];
 		KEY = sp.i64;
-	}
-	else	// make a KEY from the CPU TYPE & the speed
-	{
-		KEY = info.cpu_clock_speed;
-		KEY |= info.cpu_revision;
-	}
+//	}
+//	else	// make a KEY from the CPU TYPE & the speed
+//	{
+//		KEY = info.cpu_clock_speed;
+//		KEY |= info.cpu_revision;
+//	}
 	
 	// sanity check
 	if (!KEY) KEY = 0xbebebebe;
@@ -166,20 +170,21 @@ thread_id id;
 		about->AddChild(back);
 	
 	
-		str = new BStringView(BRect(100, 10, 310, 30), NULL, "BShisen 1.2pre");
+		str = new BStringView(BRect(100, 10, 310, 30), NULL, "BShisen 1.5.0-alpha");
 		str->SetFontSize(14);
 		str->SetHighColor(0,255,0);
 		back->AddChild(str);
 	
 		str = new BStringView(BRect(100, 35, 310, 55), NULL,
-			"(c) 1998-2001 Kelvin W Sherlock");
+			"(c) 1999-2014 Kelvin W Sherlock"
+						);
 		str->SetFontSize(12);
 		str->SetHighColor(0,255,0);
 		back->AddChild(str);
 	
 		str = new BStringView(BRect(100, 60, 310, 80), NULL,
-			"kelvin@xbar.org");
-		str->SetFontSize(12);
+			"Maintainer: pistooli-haiku@pistooli.com");
+		str->SetFontSize(10);
 		str->SetHighColor(0,255,0);
 		back->AddChild(str);
 
@@ -187,7 +192,7 @@ thread_id id;
 #if BUILD == SHAREWARE	
 		if (!REGISTERED) //70, 90
 		{
-			str = new BStringView(BRect(100, 85, 310, 105), NULL, "UNREGISTERED - PLEASE REGISTER");
+			str = new BStringView(BRect(30, 85, 310, 105), NULL, "UNREGISTERED - PLEASE REGISTER");
 			str->SetFontSize(12);
 			str->SetHighColor(255,0,0);
 			back->AddChild(str);
@@ -214,23 +219,23 @@ thread_id id;
 #if BUILD == CUSTOM
 	{
 			str = new BStringView(BRect(100, 95, 310, 110), NULL, 
-				B_UTF8_OPEN_QUOTE "The rumors of my demise");
-			str->SetFontSize(12);
+				B_UTF8_OPEN_QUOTE "It's the same train, but it's different."B_UTF8_CLOSE_QUOTE);
+			str->SetFontSize(10);
 			str->SetHighColor(255,0,0);
 			back->AddChild(str);
 			
 			str = new BStringView(BRect(100, 110, 310, 130), NULL, 
-				"have been greatly exaggerated" B_UTF8_CLOSE_QUOTE);
-			str->SetFontSize(12);
+				 B_UTF8_OPEN_QUOTE "Based on 1.2pre sources (Released 2014)" B_UTF8_CLOSE_QUOTE);
+			str->SetFontSize(10);
 			str->SetHighColor(255,0,0);
 			back->AddChild(str);
 	
 	}
 #endif
 
-		//bmap = BTranslationUtils::GetBitmap("S.tiff");
-		
-		bmap = BTranslationUtils::GetBitmap(B_RAW_TYPE, ABOUT_PIC_ID);
+//		Pistooli: Again too lazy to search for ABOUT_PIC_ID, put TIFF into Resource File
+		bmap = BTranslationUtils::GetBitmap(B_TIFF_FORMAT, 1);		
+//		bmap = BTranslationUtils::GetBitmap(B_RAW_TYPE, ABOUT_PIC_ID);
 		if (bmap)
 		{
 			back->SetViewBitmap(bmap, B_FOLLOW_ALL, 0);
