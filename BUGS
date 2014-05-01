@@ -1,8 +1,11 @@
 Sometimes, fast clicking can result in multiple tiles being selected.
+o Preferences window doesn't display correctly.
+o ConnectSound doesn't play correctly (speakers "click" during playback).
+o Sometimes, fast clicking can result in multiple tiles being selected.
 	
 o select is only being called once.
 o connect3 is only being called once
-o MessageREcieved is only being called once
+o MessageReceived is only being called once
 
 o Bitmap control?
 
