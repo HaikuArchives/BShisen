@@ -1,5 +1,9 @@
+//
+// Last edited on 22/04/2014 by Pistooli
+//
 #include "Tiles.h"
 #include <TranslationUtils.h>
+#include <TranslatorFormats.h> // Pistooli: inserted for PNG formats
 #include <Alert.h>
 #include <Application.h>
 
@@ -20,51 +24,58 @@ register int i;
 		tiles_custom[i] = NULL;
 	}
 #if 0
-	tiles[0] = BTranslationUtils::GetBitmap("pic1.bmp");
-	tiles[1] = BTranslationUtils::GetBitmap("pic2.bmp"); 
-	tiles[2] = BTranslationUtils::GetBitmap("pic3.bmp");
-	tiles[3] = BTranslationUtils::GetBitmap("pic4.bmp");
-	tiles[4] = BTranslationUtils::GetBitmap("pic5.bmp");
-	tiles[5] = BTranslationUtils::GetBitmap("pic6.bmp");
-	tiles[6] = BTranslationUtils::GetBitmap("pic7.bmp");
-	tiles[7] = BTranslationUtils::GetBitmap("pic8.bmp");
-	tiles[8] = BTranslationUtils::GetBitmap("pic9.bmp");
-	tiles[9] = BTranslationUtils::GetBitmap("pic10.bmp");
-	tiles[10] = BTranslationUtils::GetBitmap("pic11.bmp");
-	tiles[11] = BTranslationUtils::GetBitmap("pic12.bmp");
-	tiles[12] = BTranslationUtils::GetBitmap("pic13.bmp");
-	tiles[13] = BTranslationUtils::GetBitmap("pic14.bmp");
-	tiles[14] = BTranslationUtils::GetBitmap("pic15.bmp");
-	tiles[15] = BTranslationUtils::GetBitmap("pic16.bmp");
-	tiles[16] = BTranslationUtils::GetBitmap("pic17.bmp");
-	tiles[17] = BTranslationUtils::GetBitmap("pic18.bmp");
-	tiles[18] = BTranslationUtils::GetBitmap("pic19.bmp");
-	tiles[19] = BTranslationUtils::GetBitmap("pic20.bmp");
-	tiles[20] = BTranslationUtils::GetBitmap("pic21.bmp");
-	tiles[21] = BTranslationUtils::GetBitmap("pic22.bmp");
-	tiles[22] = BTranslationUtils::GetBitmap("pic23.bmp");
-	tiles[23] = BTranslationUtils::GetBitmap("pic24.bmp");
-	tiles[24] = BTranslationUtils::GetBitmap("pic25.bmp");
-	tiles[25] = BTranslationUtils::GetBitmap("pic26.bmp");
-	tiles[26] = BTranslationUtils::GetBitmap("pic27.bmp");
-	tiles[27] = BTranslationUtils::GetBitmap("pic28.bmp");
-	tiles[28] = BTranslationUtils::GetBitmap("pic29.bmp");
-	tiles[29] = BTranslationUtils::GetBitmap("pic30.bmp");
-	tiles[30] = BTranslationUtils::GetBitmap("pic31.bmp");
-	tiles[31] = BTranslationUtils::GetBitmap("pic32.bmp");
-	tiles[32] = BTranslationUtils::GetBitmap("pic33.bmp");
-	tiles[33] = BTranslationUtils::GetBitmap("pic34.bmp");
-	tiles[34] = BTranslationUtils::GetBitmap("pic35.bmp");
-	tiles[35] = BTranslationUtils::GetBitmap("pic36.bmp");
-	#endif
+	tiles_std[0] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic1.bmp");
+	tiles_std[1] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic2.bmp"); 
+	tiles_std[2] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic3.bmp");
+	tiles_std[3] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic4.bmp");
+	tiles_std[4] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic5.bmp");
+	tiles_std[5] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic6.bmp");
+	tiles_std[6] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic7.bmp");
+	tiles_std[7] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic8.bmp");
+	tiles_std[8] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic9.bmp");
+	tiles_std[9] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic10.bmp");
+	tiles_std[10] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic11.bmp");
+	tiles_std[11] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic12.bmp");
+	tiles_std[12] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic13.bmp");
+	tiles_std[13] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic14.bmp");
+	tiles_std[14] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic15.bmp");
+	tiles_std[15] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic16.bmp");
+	tiles_std[16] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic17.bmp");
+	tiles_std[17] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic18.bmp");
+	tiles_std[18] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic19.bmp");
+	tiles_std[19] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic20.bmp");
+	tiles_std[20] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic21.bmp");
+	tiles_std[21] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic22.bmp");
+	tiles_std[22] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic23.bmp");
+	tiles_std[23] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic24.bmp");
+	tiles_std[24] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic25.bmp");
+	tiles_std[25] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic26.bmp");
+	tiles_std[26] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic27.bmp");
+	tiles_std[27] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic28.bmp");
+	tiles_std[28] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic29.bmp");
+	tiles_std[29] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic30.bmp");
+	tiles_std[30] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic31.bmp");
+	tiles_std[31] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic32.bmp");
+	tiles_std[32] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic33.bmp");
+	tiles_std[33] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic34.bmp");
+	tiles_std[34] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic35.bmp");
+	tiles_std[35] = BTranslationUtils::GetBitmap("/boot/home/Desktop/BShisen-1.2/bmp/pic36.bmp");
+	
+#	endif
 #if 0
 	for (i = 5; i < 36; i++)
-		tiles[i] = BTranslationUtils::GetBitmap("pic1.bmp"); 
+		tiles_std[i] = BTranslationUtils::GetBitmap("pic1.bmp"); 
 #endif
 
 	for (i = 0; i < 36; i++)
 	{
-		tiles_std[i] = BTranslationUtils::GetBitmap(B_RAW_TYPE, i+1);
+//		Pistooli: old code deleted (resource file contained BMP - now PNG)
+//		tiles_std[i] = BTranslationUtils::GetBitmap(B_RAW_TYPE, i+1);
+
+//		Pistooli: Now code (it reads PNGs from the resource file)
+		tiles_std[i] = BTranslationUtils::GetBitmap(B_PNG_FORMAT, i+1);
+
+		
 	}
 		// if any are NULL, give alert & QUIT
 	for (i = 0; i < 36; i++)
@@ -82,7 +93,7 @@ register int i;
 		}
 	
 	}
-
+	
 }
 
 Tiles::~Tiles(void)
