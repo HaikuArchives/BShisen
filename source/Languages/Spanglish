@@ -1,8 +1,0 @@
-//
-// English language file for BShisen 1.2 / YLanguageClass
-//
-PROGRAM_NAME = "BShisen"
-NAME_VERSION = "BShisen 1.2"
-ABOUT_BSHISEN = "Word up, dudes!"
-UNREGISTERED = "UNREGISTERED - PLEASE REGISTER"
-LAST_KEY = ""

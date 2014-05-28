@@ -1,0 +1,38 @@
+//
+// Spanish language file for BShisen 1.2 / YLanguageClass
+//
+PROGRAM_NAME = "BShisen"
+NAME_VERSION = "BShisen 1.2"
+ABOUT_BSHISEN = "Sobre BShisen"
+UNREGISTERED = "NO REGISTRADO - POR FAVOR REGISTRARSE"
+YES = "Sí"
+NO = "No"
+//
+// Window title Names
+//
+//
+// Menu Items
+//
+MENU_FILE = "Archivo"
+MENU_EDIT = "Editar"
+MENU_GAME = "Juego"
+MENU_TILES = "Tejas"
+//
+MENU_ITEM_NEW_GAME = "Nuevo Juego"
+MENU_ITEM_RESTART_GAME = "Reiniciar Juego"
+MENU_ITEM_NEW_GAME_BY_ID = "Nuevo Juego por ID"
+MENU_ITEM_ABOUT_BSHISEN = "Sobre BShisen"
+MENU_ITEM_QUIT = "Salir"
+//
+MENU_ITEM_UNDO = "Deshacer"
+//
+MENU_ITEM_SUGGEST_MOVE = "Sugerir Movimiento"
+MENU_ITEM_SIZE = "Tamaño"
+MENU_ITEM_HALL_OF_FAME = "Salón de la Fama"
+MENU_ITEM_SOUND = "Sonido"
+MENU_ITEM_PREFERENCES = "Preferencias"
+MENU_ITEM_PAUSE = "Pausa"
+//
+MENU_ITEM_STANDARD = "Estándar"
+//
+LAST_KEY = ""

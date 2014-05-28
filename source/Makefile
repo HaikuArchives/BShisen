@@ -2,9 +2,9 @@ NAME= BShisen
 TYPE= APP
 SRCS= BitmapControl.cpp Prefs.cpp Tiles.cpp ID_Win.cpp main.cpp board.cpp GameWindow.cpp Language.cpp Hall.cpp Shisen.cpp
 RSRCS= Resources.rsrc
-LIBS= /boot/system/lib/libbe.so /boot/system/lib/libroot.so /boot/system/lib/libmedia.so /boot/system/lib/libtranslation.so /boot/system/lib/libgame.so
+LIBS= be root media translation game
 LIBPATHS=
-SYSTEM_INCLUDE_PATHS= /boot/develop/headers/be /boot/develop/headers/cpp /boot/develop/headers/posix /boot/develop/lib /boot/beos/system/lib
+SYSTEM_INCLUDE_PATHS=
 LOCAL_INCLUDE_PATHS=
 OPTIMIZE=SOME
 #	specify any preprocessor symbols to be defined.  The symbols will not
@@ -24,4 +24,6 @@ COMPILER_FLAGS=-Woverloaded-virtual -funsigned-bitfields -Wwrite-strings
 LINKER_FLAGS=
 
 ## include the makefile-engine
-include $(BUILDHOME)/etc/makefile-engine
+DEVEL_DIRECTORY := \
+	$(shell findpaths -r "makefile_engine" B_FIND_PATH_DEVELOP_DIRECTORY)
+include $(DEVEL_DIRECTORY)/etc/makefile-engine
