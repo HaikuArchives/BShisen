@@ -1,7 +1,8 @@
 BShisen
 =======
+![Screenshot](Screenshot.png)
 
-BeOS tile matching game.  Circa 1999.
+**BeOS tile matching game.  Circa 1999.**
 
 Original author: Kelvin W. Sherlock.
 Contact: kelvin aht xbar dawt org
